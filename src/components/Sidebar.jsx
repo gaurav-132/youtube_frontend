@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
  
 const Sidebar = ({isWide}) => {
   return (
-    <div className={` h-screen  fixed overflow-hidden ${isWide ? 'w-56' : 'w-[70px]'}`}>
-        <div class="flex flex-col">
+    <div className={` h-screen  overflow-hidden  `}>
+        <div className="flex flex-col">
             <div className='rounded-lg inline-block text-center cursor-pointer icon-hover'>
                 <Link className='block my-6'>
                     <FontAwesomeIcon icon={faHome} fontSize={21}/>

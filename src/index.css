@@ -6,6 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 body{
@@ -32,5 +33,18 @@ body{
 
 .icon-hover:hover{
     background-color: hsla(0, 0%, 100%, 0.08);
-    
 }
+
+.common-bg{
+    background-color: hsla(0, 0%, 100%, 0.08);
+}
+
+.common-bg:hover{
+    background-color:  rgba(255,255,255,0.35);
+}
+
+.is-active{
+    background-color: #fff;
+    color: #0f0f0f;
+}
+

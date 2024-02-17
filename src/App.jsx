@@ -6,24 +6,28 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import { useState } from 'react';
+import NormalLayout from './layouts/NormalLayout';
+import AdminLayout from './layouts/AdminLayout';
+import AdminDashboardPage from './adminPages/AdminDashboardPage';
+
 
 const App = () => {
 
-    const [sidebar, setSidebar] = useState(true);
-    const [isWide, setIsWide] = useState(false);
     return(
         <BrowserRouter>
-            <Header/>
-            {sidebar && <Sidebar isWide={isWide}/>}
             <Routes>
-                <Route path='/' element={<Home/>} />
-                <Route path='/about' element={<About/>} />
-                <Route path='/services' element={<Service/>} />
-                <Route path='/contact' element={<Contact/>} />
-                <Route path='/register' element={<Register/>} />
-                <Route path='/login' element={<Login/>} />
+                <Route path="/" element={<NormalLayout />}>
+                    <Route index element={<Home />} />
+                    <Route path='/about' element={<About/>} />
+                    <Route path='/services' element={<Service/>} />
+                    <Route path='/contact' element={<Contact/>} />
+                    <Route path='/register' element={<Register/>} />
+                    <Route path='/login' element={<Login/>} />
+                </Route>
+                <Route path="admin/*" element={<AdminLayout />}>
+                    <Route index element={<AdminDashboardPage />} />
+                    {/* <Route path="/manage-users" element={<AdminManageUsersPage />} /> */}
+                </Route>
             </Routes>
         </BrowserRouter>
     )

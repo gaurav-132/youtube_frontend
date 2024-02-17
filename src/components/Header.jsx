@@ -7,7 +7,7 @@ import { faBars, faSearch, faMicrophone, faVideoCamera, faBell, faUser } from "@
 const Header = () => {
     return(
         <div className="flex justify-between mx-5 py-2">
-            <div className="flex justify-between w-[180px]   items-center">
+            <div className="flex justify-between w-[166px]   items-center">
                 <div className="rounded-full h-9 w-9 flex justify-center items-center icon-hover">
                     <FontAwesomeIcon icon={faBars} fontSize={20}/>
                 </div>
