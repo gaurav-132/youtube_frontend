@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -22,16 +23,29 @@ const Home = ({ backendUrl, headerObj }) => {
     }, [])
 
     return (
-    <div className='mx-6'>
+    <div className='mx-6 '>
         <div className='flex flex-wrap justify-between '>
             {videos?.map((video, index)=>{
                 return(
-                    <div key={index} className='bg-red-600  mt-3  w-[30%] max-w-[500px] rounded-md'>
-                        <a className='cursor-pointer'>
-                            <div>
-                                <img src={video.thumbnailUrl} className='object-cover'/>
+                    <div key={index} className='mt-3 w-[32%] max-w-[500px] rounded-md'>
+                        <Link className='cursor-pointer block'>
+                            <div className='w-full h-48 bg-white overflow-hidden rounded-tl-md rounded-tr-md'>
+                                <img src={video?.thumbnailUrl} className='object-cover w-full h-full' alt="Thumbnail"/>
                             </div>
-                        </a>
+                            <div className='flex justify-between'>
+                                <div className=''>
+                                    <div className='rounded-full w-[46px] h-[46px] overflow-hidden my-4'>
+                                        <img src={video?.thumbnailUrl} alt="Thumbnail" className='overflow-clip rounded-full w-[46px] h-[46px]' />
+                                    </div>
+                                </div>
+                                <div className='flex-1 pl-4'>
+                                    <div className='pt-4 font-medium'>
+                                        {video?.title}
+                                    </div>
+                                    <div className='font-thin text-xs'>{video?.author}</div>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
                 )
             })}

@@ -4,29 +4,24 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faSearch, faMicrophone, faVideoCamera, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 
 
-const Header = () => {
+const AdminHeader = () => {
     return(
-        <div className="flex justify-between px-5 py-2 sticky top-0 bg-black text-white p-4">
-            <div className="flex justify-between w-[166px]   items-center">
+        <div className="flex justify-between px-5 py-3 shadow-md sticky top-0 bg-[#282828] admin-shadow text-white p-4 z-[2]">
+            <div className="flex justify-between w-[166px] items-center">
                 <div className="rounded-full h-9 w-9 flex justify-center items-center icon-hover">
                     <FontAwesomeIcon icon={faBars} fontSize={20}/>
                 </div>
                 <div className="flex items-center text-lg">
-                    <FontAwesomeIcon icon={faYoutube} fontSize={26} color="red" />&nbsp;&nbsp;<span className="text-xl">Youtube</span>
+                    <img src="https://www.gstatic.com/youtube/img/creator/yt_studio_logo_white.svg" className="w-24" alt="" />
                 </div>
             </div>
             <div className="w-1/2  flex items-center justify-around">
                 <div className="">
                     {/* <FontAwesomeIcon icon={faSearch} /> */}
                 </div>
-                <div className="">
-                    <input type="text" className="rounded-l-full w-96 py-2 pl-4 outline-none border searchbar-bg"/>
-                    <button className="youtube-search-button text-center py-2 px-5 border border-l-0  border-color rounded-r-full">
-                        <FontAwesomeIcon icon={faSearch} />
-                    </button>
-                </div>
-                <div className="icons-bg w-11 h-11  cursor-pointer flex justify-center items-center rounded-full">
-                    <FontAwesomeIcon icon={faMicrophone} />
+                <div className="relative">
+                    <input type="text" className="rounded-md w-[35vw] py-[6px] pl-10 outline-none text-sm bg-[#282828]  border-[#606060] border" placeholder="Search Your Channel"/>
+                    <FontAwesomeIcon icon={faSearch} className="absolute top-[10px] left-3 text-sm"/>
                 </div>
             </div>
             <div className="w-1/6  flex items-center justify-end">
@@ -44,4 +39,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default AdminHeader;

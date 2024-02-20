@@ -14,6 +14,7 @@ body{
     color: #fff;
 }
 
+
 .youtube-search-button {
     background-color: hsla(0, 0%, 100%, 0.08);
 }
@@ -48,3 +49,6 @@ body{
     color: #0f0f0f;
 }
 
+.admin-shadow{
+    box-shadow: rgba(0,0,0,0.2);;
+}

@@ -52,19 +52,19 @@ const NormalLayout = () => {
     };
 
     return (
-        <div className="normal-layout">
+        <div className="normal-layout h-screen flex flex-col">
             <Header />
             {
                 getScreenType() === 'home' ? (
-                    <div className="flex">
+                    <div className="flex flex-1 overflow-hidden">
                         <div className='w-[70px]'>
                             <Sidebar/>
                         </div>
-                        <div className='flex-1'>
-                            <div>
+                        <div className='flex-1 flex flex-col overflow-hidden'>
+                            <div className='py-3'>
                                 <SuggestionCarausel carauselItems={carauselItem}/>
                             </div>
-                            <div>
+                            <div className='overflow-y-auto flex-1'>
                                 <Home backendUrl={BACKEND_URL} headerObj={HEADER_OBJ} />
                             </div>
                         </div>
