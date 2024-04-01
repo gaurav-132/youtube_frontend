@@ -1,10 +1,10 @@
-import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faSearch, faMicrophone, faVideoCamera, faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 
 
-const AdminHeader = () => {
+
+const AdminHeader: React.FC = () => {
     return(
         <div className="flex justify-between px-5 py-3 shadow-md sticky top-0 bg-[#282828] admin-shadow text-white p-4 z-[2]">
             <div className="flex justify-between w-[166px] items-center">

@@ -11,6 +11,7 @@
 
 body{
     background-color: #0f0f0f;
+    /* background-color: #fff; */
     color: #fff;
 }
 
@@ -52,3 +53,100 @@ body{
 .admin-shadow{
     box-shadow: rgba(0,0,0,0.2);;
 }
+
+.modal-bg{
+    background-color: #282828;
+}
+
+.custom-border{
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-active{
+    background-color: hsla(0, 0%, 100%, 0.08);
+}
+
+.scrollbar-none{
+    scrollbar-width: none;
+}
+
+.file-input-label {
+    position: relative;
+}
+
+.file-input-button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #3ea6ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-input-label input[type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.scrollbar-none{
+    display: none;
+}
+  
+  /* On hover, make the thumb darker */
+  .modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+
+  .stepper{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .step {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+  }
+
+  .step-number{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    border-color: #ccc;
+  }
+
+  .active .step-number{
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .complete .step-number{
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  .add-class{
+    padding: 8px 8px 8px 16px;
+    height: calc(52px - 16px);
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+  }

@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BACKEND_URL as backendUrl } from '../utils/constant';
+import { HEADER_OBJ as headerObj } from '../utils/constant';
+
+interface Video {
+    thumbnailUrl: string;
+    title: string;
+    author: string;
+}
 
 
+const Home: React.FC = () => {
+    const [videos, setVideos] = useState<Video[]>([]);
 
-const Home = ({ backendUrl, headerObj }) => {
-
-    const [videos, setVideos] = useState([]);
-
-    const VIDEO_URL = backendUrl+'/api/youtube/get-videos';
-
+    const VIDEO_URL = `${backendUrl}/api/youtube/get-videos`;
 
     const getVideos = async () => {
         const response = await fetch(VIDEO_URL, headerObj);
@@ -17,18 +22,16 @@ const Home = ({ backendUrl, headerObj }) => {
         setVideos(data?.videos?.data);  
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getVideos();
-
-    }, [])
+    }, []);
 
     return (
-    <div className='mx-6 '>
-        <div className='flex flex-wrap justify-between '>
-            {videos?.map((video, index)=>{
-                return(
+        <div className='mx-6'>
+            <div className='flex flex-wrap justify-between'>
+                {videos?.map((video: Video, index: number) => (
                     <div key={index} className='mt-3 w-[32%] max-w-[500px] rounded-md'>
-                        <Link className='cursor-pointer block'>
+                        <Link to={`/video/${index}`} className='cursor-pointer block'>
                             <div className='w-full h-48 bg-white overflow-hidden rounded-tl-md rounded-tr-md'>
                                 <img src={video?.thumbnailUrl} className='object-cover w-full h-full' alt="Thumbnail"/>
                             </div>
@@ -47,11 +50,9 @@ const Home = ({ backendUrl, headerObj }) => {
                             </div>
                         </Link>
                     </div>
-                )
-            })}
+                ))}
+            </div>
         </div>
-    </div>
-      
     );
 };
 
