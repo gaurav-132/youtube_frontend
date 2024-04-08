@@ -59,7 +59,7 @@ const NormalLayout: React.FC = () => {
                         <Sidebar />
                     </div>
                     <div className='flex-1 flex flex-col'>
-                        <div className='py-3'>
+                        <div className='py-3 mt-[60px]'>
                             <SuggestionCarausel carauselItems={carauselItem} />
                         </div>
                         <div className='flex-1'>

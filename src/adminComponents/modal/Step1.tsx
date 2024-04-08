@@ -36,38 +36,7 @@ const Step1: React.FC<Props> = ({ formData, setFormData, handleNextStep }) => {
         }
     };
 
-    const URI = BACKEND_URL + '/api/v1/videos/upload-video-local';
-
-    const uploadVideoOnServer = async () => {
-        if (!formData.videoFile) {
-            console.error('No file selected for upload');
-            return;
-        }
-
-        try {
-            const videoFormData = new FormData();
-            videoFormData.append('videoFile', formData.videoFile);
-
-            const response = await fetch(URI, {
-                method: 'POST',
-                body: videoFormData,
-            });
-
-            const data = await response.json();
-            
-            if(response){
-                setFormData(prevstate => ({...prevstate, uploadedFile : data?.data?.url}));
-                handleNextStep();
-            }
-
-            
-        } catch (error) {
-            console.error('Error uploading file:', error);
-        }
-    };
-
-
-
+    
 
     return (
         <div className='space-y-4' onDragOver={(e) => e.preventDefault()}>

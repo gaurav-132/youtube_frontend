@@ -30,7 +30,7 @@ const Step3: React.FC<props> = ({ formData, setFormData }) => {
 
     return (
         <div className=''>
-            <div className='flex h-[62vh] overflow-y-scroll justify-between'>
+            <div className='flex h-[340px] overflow-y-scroll justify-between'>
                 <div className='w-[60%] mt-10 ml-10'>
                     <div className='mb-5    '>
                         <div className='mb-2'>Visiblity</div>

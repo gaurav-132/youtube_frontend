@@ -48,7 +48,7 @@ const Step2: React.FC<props> = ({ formData, setFormData }) => {
 
     return (
     <div>
-        <div className='flex flex-wrap flex-col justify-between h-[55vh] overflow-y-scroll w-full'>
+        <div className='flex flex-wrap flex-col justify-between h-[340px] overflow-y-scroll w-full'>
             <div  className='w-[60%] ml-10 mt-10'>
                 <div className='flex justify-between'>
                     <div className='text-xl'>Details</div>
