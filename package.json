@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "react-scripts build",
+    "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "type-check": "tsc --noEmit"
@@ -23,6 +23,8 @@
     "peer": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-player": "^3.4.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
     "simple-peer": "^9.11.1",

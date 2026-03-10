@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { Route, Navigate } from 'react-router-dom';
-import { openLoginModal } from '../features/adminSlice';
+import { openLoginModal } from '../features/admin/store/adminSlice';
 import { useEffect } from 'react';
 
 interface ProtectedRouteProps {
@@ -8,12 +8,12 @@ interface ProtectedRouteProps {
     isAuthenticated: boolean;
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ component: Component, isAuthenticated}) => {
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ component: Component, isAuthenticated }) => {
 
     const dispatch = useDispatch();
 
 
-    if(!isAuthenticated) {
+    if (!isAuthenticated) {
         dispatch(openLoginModal());
         return <Navigate to="/" />;
     }

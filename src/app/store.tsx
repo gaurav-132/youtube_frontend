@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import videoSlice from '../features/videoUploadSlice';
-import authSlice from '../features/authSlice';
-import adminSlice from '../features/adminSlice';
+import videoSlice from '../features/video/store/videoUploadSlice';
+import authSlice from '../features/auth/store/authSlice';
+import adminSlice from '../features/admin/store/adminSlice';
 
 // Combine reducers
 const rootReducer = {

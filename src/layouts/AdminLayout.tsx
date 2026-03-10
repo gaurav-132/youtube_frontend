@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { UseSelector, useSelector } from 'react-redux';
 import { RootState } from '../app/store';
 import { Outlet } from 'react-router-dom';
-import AdminHeader from '../adminComponents/AdminHeader';
-import AdminSidebar from '../adminComponents/AdminSidebar';
-import Modal from '../adminComponents/Modal';
-import useGetUserData from '../adminHooks/useGetUserData';
+import AdminHeader from '../features/admin/components/AdminHeader';
+import AdminSidebar from '../features/admin/components/AdminSidebar';
+import Modal from '../features/admin/components/Modal';
+import useGetUserData from '../features/admin/hooks/useGetUserData';
 
 const AdminLayout: React.FC = () => {
     const showModal = useSelector((state: RootState) => state.admin.showVideoUploadModal);
@@ -17,14 +17,14 @@ const AdminLayout: React.FC = () => {
     return (
         <div className="flex flex-col h-screen">
             <AdminHeader />
-            {showModal && <Modal/>}
+            {showModal && <Modal />}
             <div className='flex flex-1 overflow-hidden '>
-                <div className='w-[70px] bg-[#282828] z-1'>
+                <div className='w-[250px] bg-[#1e1e1e] border-r border-[#3e3e3e] hidden md:block'>
                     <AdminSidebar />
                 </div>
                 <div className='flex-1 flex flex-col overflow-hidden '>
-                    <Outlet />  
-                </div>  
+                    <Outlet />
+                </div>
             </div>
         </div>
     );

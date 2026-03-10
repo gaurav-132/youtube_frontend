@@ -2,71 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background-color: #0f0f0f;
-    /* background-color: #fff; */
+body {
+    background: #0f0f0f !important;
+    background-color: #0f0f0f !important;
     color: #fff;
+    overflow-x: hidden;
 }
+
+/* Scrollbar globally */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #717171;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
 
 
 .youtube-search-button {
     background-color: hsla(0, 0%, 100%, 0.08);
 }
 
-.icons-bg{
+.icons-bg {
     background-color: hsla(0, 0%, 100%, 0.08);
 }
 
-.searchbar-bg{
-    background-color: hsl(0,0%,7%);
-    border-color: hsl(0,0%,18.82%);
+.searchbar-bg {
+    background-color: hsl(0, 0%, 7%);
+    border-color: hsl(0, 0%, 18.82%);
 }
 
-.border-color{
-    border-color: hsl(0,0%,18.82%);
+.border-color {
+    border-color: hsl(0, 0%, 18.82%);
 }
 
-.icon-hover:hover{
+.icon-hover:hover {
     background-color: hsla(0, 0%, 100%, 0.08);
 }
 
-.common-bg{
+.common-bg {
     background-color: hsla(0, 0%, 100%, 0.08);
 }
 
-.common-bg:hover{
-    background-color:  rgba(255,255,255,0.35);
+.common-bg:hover {
+    background-color: rgba(255, 255, 255, 0.35);
 }
 
-.is-active{
+.is-active {
     background-color: #fff;
     color: #0f0f0f;
 }
 
-.admin-shadow{
-    box-shadow: rgba(0,0,0,0.2);;
+.admin-shadow {
+    box-shadow: rgba(0, 0, 0, 0.2);
+    ;
 }
 
-.modal-bg{
+.modal-bg {
     background-color: #282828;
 }
 
-.custom-border{
+.custom-border {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-.admin-active{
+.admin-active {
     background-color: hsla(0, 0%, 100%, 0.08);
 }
 
-.scrollbar-none{
+.scrollbar-none {
     scrollbar-width: none;
 }
 
@@ -96,32 +118,50 @@ body{
 }
 
 
-.scrollbar-none{
+.scrollbar-none {
     display: none;
 }
-  
-  /* On hover, make the thumb darker */
-  .modal-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
 
-  .stepper{
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #717171;
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+}
+
+/* Modal specific scrollbar overrides if needed, but custom-scrollbar should suffice */
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.stepper {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-  }
+}
 
-  .step {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     position: relative;
-  }
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
 
-  .step-number{
+.step-number {
     display: flex;
     align-items: center;
     text-align: center;
@@ -131,22 +171,22 @@ body{
     border: 1px solid white;
     border-radius: 50%;
     border-color: #ccc;
-  }
+}
 
-  .active .step-number{
+.active .step-number {
     background-color: #007bff;
     color: #fff;
-  }
+}
 
-  .complete .step-number{
+.complete .step-number {
     background-color: #28a745;
     color: #fff;
-  }
+}
 
-  .add-class{
+.add-class {
     padding: 8px 8px 8px 16px;
     height: calc(52px - 16px);
     display: flex;
     flex-shrink: 0;
     align-items: center;
-  }
+}

@@ -1,0 +1,30 @@
+src/components/layout/Header/Header.tsx(3,32): error TS2307: Cannot find module '../../../../features/admin/store/adminSlice' or its corresponding type declarations.
+src/components/layout/Header/Header.tsx(7,27): error TS2307: Cannot find module '../../../../app/store' or its corresponding type declarations.
+src/features/admin/components/Modal.tsx(65,50): error TS2339: Property 'videoFile' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(66,46): error TS2339: Property 'title' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(67,52): error TS2339: Property 'description' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(68,54): error TS2339: Property 'thumbnailFile' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(69,49): error TS2339: Property 'playlist' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(70,49): error TS2339: Property 'audience' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(71,50): error TS2339: Property 'visiblity' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(72,53): error TS2339: Property 'scheduleDate' does not exist on type 'object'.
+src/features/admin/components/Modal.tsx(73,53): error TS2339: Property 'scheduleTime' does not exist on type 'object'.
+src/features/admin/components/modal/Step1.tsx(4,29): error TS2307: Cannot find module '../../utils/constant' or its corresponding type declarations.
+src/features/admin/hooks/useGetUserData.tsx(2,29): error TS2307: Cannot find module '../utils/constant' or its corresponding type declarations.
+src/features/comment/hooks/useGetPostComments.tsx(2,26): error TS2307: Cannot find module '../pages/VideoPage' or its corresponding type declarations.
+src/features/comment/hooks/useGetPostComments.tsx(3,29): error TS2307: Cannot find module '../utils/constant' or its corresponding type declarations.
+src/features/video/hooks/useGetPlayingVideo.tsx(3,29): error TS2307: Cannot find module '../utils/constant' or its corresponding type declarations.
+src/features/video/hooks/useGetPlayingVideo.tsx(4,23): error TS2307: Cannot find module '../pages/VideoPage' or its corresponding type declarations.
+src/features/video/hooks/useGetRecommendedVideos.tsx(2,43): error TS2307: Cannot find module '../utils/constant' or its corresponding type declarations.
+src/features/video/hooks/useGetRecommendedVideos.tsx(3,41): error TS2307: Cannot find module '../utils/constant' or its corresponding type declarations.
+src/features/video/hooks/useGetRecommendedVideos.tsx(4,35): error TS2307: Cannot find module '../pages/VideoPage' or its corresponding type declarations.
+src/pages/VideoPage.tsx(7,35): error TS2307: Cannot find module '../hooks/useHandleApiError' or its corresponding type declarations.
+src/pages/VideoPage.tsx(11,37): error TS2307: Cannot find module '../hooks/useGetRecommendedVideos' or its corresponding type declarations.
+src/pages/VideoPage.tsx(12,32): error TS2307: Cannot find module '../hooks/useGetPlayingVideo' or its corresponding type declarations.
+src/pages/VideoPage.tsx(16,32): error TS2307: Cannot find module '../hooks/useGetPostComments' or its corresponding type declarations.
+src/pages/VideoPage.tsx(17,26): error TS2307: Cannot find module '../components/PostComments' or its corresponding type declarations.
+src/pages/VideoPage.tsx(18,25): error TS2307: Cannot find module '../components/VideoPlayer' or its corresponding type declarations.
+src/pages/VideoPage.tsx(19,30): error TS2307: Cannot find module '../components/shimmer/VideoPlayShimmer' or its corresponding type declarations.
+src/pages/VideoPage.tsx(473,33): error TS18048: 'postComments.length' is possibly 'undefined'.
+src/shared/hooks/useHandleApiError.tsx(2,32): error TS2307: Cannot find module '../features/adminSlice' or its corresponding type declarations.
+src/shared/hooks/useHandleApiError.tsx(3,24): error TS2307: Cannot find module '../features/authSlice' or its corresponding type declarations.
