@@ -78,7 +78,7 @@ const NormalLayout: React.FC = () => {
                             <SuggestionCarousel carauselItems={carauselItem} />
                         </div>
                     )}
-                    <div className={isHome ? 'px-2 sm:px-4' : ''}>
+                    <div>
                         <Outlet />
                     </div>
                 </main>

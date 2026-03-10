@@ -9,7 +9,7 @@ interface AdminState {
 const initialState: AdminState = {
     showVideoUploadModal: false,
     showLoginModal: false,
-    isSidebarOpen: true,
+    isSidebarOpen: false,
 }
 
 const adminSlice = createSlice({
