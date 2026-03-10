@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BACKEND_URL as backendUrl } from '../utils/constant';
 import { HEADER_OBJ as headerObj } from '../utils/constant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBolt, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
 interface Video {
     thumbnailUrl: string;
@@ -33,8 +35,8 @@ const Home: React.FC = () => {
     }, []);
 
     return (
-        <div className="bg-[#0f0f0f] min-h-screen text-white pb-8 pt-3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-9">
+        <div className="bg-[#0f0f0f] min-h-screen text-white pb-10 pt-2 px-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8">
                 {videos.map((video, index) => (
                     <article key={index} className="group cursor-pointer">
                         <Link to={`/video/${index}`} className="block">
@@ -62,26 +64,52 @@ const Home: React.FC = () => {
                                 />
                             </div>
 
-                            <div className="flex-1 min-w-0 relative pr-7">
+                            <div className="flex-1 min-w-0 pr-2">
                                 <Link to={`/video/${index}`}>
-                                    <h3 className="text-[15px] font-semibold leading-[1.35] mb-1 line-clamp-2">
+                                    <h3 className="text-[15px] font-semibold leading-[1.3] mb-1 line-clamp-2">
                                         {video?.title || 'Untitled Video'}
                                     </h3>
                                 </Link>
-                                <p className="text-[14px] text-[#aaaaaa] truncate hover:text-white transition-colors">
-                                    {video?.author || 'Unknown Channel'}
-                                </p>
+                                <p className="text-[14px] text-[#aaaaaa] truncate">{video?.author || 'Unknown Channel'}</p>
                                 <p className="text-[14px] text-[#aaaaaa] mt-0.5">
                                     {Math.floor(Math.random() * 900) + 1}K views • {Math.floor(Math.random() * 11) + 1} months ago
                                 </p>
-                                <button className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 p-1 hover:bg-[#303030] rounded-full transition-all">
-                                    <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z" /></svg>
-                                </button>
                             </div>
+
+                            <button className="self-start p-1 rounded-full hover:bg-[#2d2d2d]">
+                                <FontAwesomeIcon icon={faEllipsisVertical} className="text-[#aaaaaa] text-sm" />
+                            </button>
                         </div>
                     </article>
                 ))}
             </div>
+
+            {videos.length > 0 && (
+                <section className="mt-10">
+                    <div className="flex items-center gap-2 mb-4">
+                        <FontAwesomeIcon icon={faBolt} className="text-[#ff0033]" />
+                        <h2 className="text-[26px] font-bold">Shorts</h2>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+                        {videos.slice(0, 5).map((video, index) => (
+                            <article key={index} className="group cursor-pointer">
+                                <div className="rounded-xl overflow-hidden bg-[#1f1f1f]">
+                                    <img src={video.thumbnailUrl} className="w-full h-[320px] object-cover" alt="short" />
+                                </div>
+                                <div className="flex mt-2 gap-2">
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="text-[16px] font-semibold leading-tight line-clamp-2">{video.title || 'Short title goes here'}</h3>
+                                        <p className="text-[#aaaaaa] text-[14px] mt-1">{Math.floor(Math.random() * 950) + 50}K views</p>
+                                    </div>
+                                    <button className="self-start p-1 rounded-full hover:bg-[#2d2d2d]">
+                                        <FontAwesomeIcon icon={faEllipsisVertical} className="text-[#aaaaaa] text-sm" />
+                                    </button>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </section>
+            )}
 
             {videos.length === 0 && (
                 <div className="flex justify-center items-center h-64 text-[#aaaaaa] font-medium">
